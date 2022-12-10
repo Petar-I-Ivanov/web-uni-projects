@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Happy</title>
+
+<link rel="stylesheet" href="..\style.css">
+<style>
+ 
+ .news {
+   border: solid black 1px;
+   background-color: Lightyellow;
+   margin-top: 50px;
+   width: 15%;
+   float: right;
+ }
+ 
+ .news a {
+   text-decoration: none;
+ }
+
+ #flag {
+   margin-top: 50px;
+   width: 600px;
+   height: 300px;
+   background-color: blue;
+ }
+
+ #stars {
+   width: 300px;
+   margin: auto;
+   animation-name: spin;
+   animation-duration: 5000ms;
+   animation-iteration-count: infinite;
+   animation-timing-function: linear;
+ }
+
+ @keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div align="center">
+ <svg height="130" width="185">
+  <defs>
+   <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" style="stop-color:rgb(255,60,0);stop-opacity:1" />
+    <stop offset="100%" style="stop-color:rgb(0,0,0);stop-opacity:1" />
+   </linearGradient>
+  </defs>
+  <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+  <text fill="#ffffff" font-size="45" font-family="Brush Script MT" x="30" y="85">HAPPY</text>
+ </svg>
+</div>
+
+<div class="navbar">
+
+  <a href="Home.html">Начало</a>
+  
+  <div class="subnav">
+    <button class="subnavbtn">За Фирмата <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="..\Articles\Partners.html">Партньори</a>
+      <a href="..\Articles\Development.html">Развитие</a>
+    </div>
+  </div>
+  
+  <div class="subnav">
+    <button class="subnavbtn">За Собственика <i class="fa fa-caret-down"></i></button>
+    <div class="subnav-content">
+      <a href="..\Articles\Favourite movie.html">Филм</a>
+      <a href="..\Articles\Favourite song.html">Музика</a>
+    </div>
+  </div>
+  
+  <a href="Products.html">Продукти</a>
+  <a href="Purchase.html">Поръчки</a>
+  <a href="#">Мнения</a>
+  <a href="Hiring waiter.html">Работа</a>
+
+</div>
+
+</header>
+ 
+ <div class="news" align="center">
+ 
+ <h4 style="text-align:center; text-decoration: underline">Новини</h4>
+ <a href="..\News\Diploma for the best restourants 2020.html">HAPPY BAR & GRILL С ОТЛИЧИЕ ЗА „НАЙ-ДОБРА ВЕРИГА РСТОРАНТИ НА 2020г."</a>
+ <br><br>
+ <a href="..\News\Season of pumpkins.html">Сезонът на тиквите</a>
+ </div>
+
+ <div id="flag">
+  <div id="stars">
+    <svg width="300" height="300">
+      <g id="s" transform="translate(150,30)" fill="yellow">
+        <g id="c">
+          <path id="t" d="M 0,-20 V 0 H 10" transform="rotate(18 0,-20)"/>
+          <use xlink:href="#t" transform="scale(-1,1)"/>
+        </g>
+        <use xlink:href="#c" transform="rotate(72)"/>
+        <use xlink:href="#c" transform="rotate(144)"/>
+        <use xlink:href="#c" transform="rotate(216)"/>
+        <use xlink:href="#c" transform="rotate(288)"/>
+      </g>
+      <use xlink:href="#s" transform="rotate(30 150,150) rotate(330 150,30)"/>
+      <use xlink:href="#s" transform="rotate(60 150,150) rotate(300 150,30)"/>
+      <use xlink:href="#s" transform="rotate(90 150,150) rotate(270 150,30)"/>
+      <use xlink:href="#s" transform="rotate(120 150,150) rotate(240 150,30)"/>
+      <use xlink:href="#s" transform="rotate(150 150,150) rotate(210 150,30)"/>
+      <use xlink:href="#s" transform="rotate(180 150,150) rotate(180 150,30)"/>
+      <use xlink:href="#s" transform="rotate(210 150,150) rotate(150 150,30)"/>
+      <use xlink:href="#s" transform="rotate(240 150,150) rotate(120 150,30)"/>
+      <use xlink:href="#s" transform="rotate(270 150,150) rotate(90 150,30)"/>
+      <use xlink:href="#s" transform="rotate(300 150,150) rotate(60 150,30)"/>
+      <use xlink:href="#s" transform="rotate(330 150,150) rotate(30 150,30)"/>
+    </svg>
+  </div>
+</div>
+ 
+</body>
+ 
+</html>

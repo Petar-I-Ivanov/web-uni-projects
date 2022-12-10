@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>test</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js"></script>
+</head>
+
+<body>
+<div class="card-body text-secondary">
+
+  <span class="font-weight-bold">The</span>
+  <div ondrop="drop(event)" ondragover="allowDrop(event)" id="first" class="border border-dark mx-1" style="display:inline-block; height:1.6rem; width:9rem; margin-right:4px; margin-left:2px;"></div>
+
+
+  <span class="font-weight-bold">observer recognized the</span>
+  <div ondrop="drop(event)" ondragover="allowDrop(event)" id="second" class="border border-dark mx-1" style="display:inline-block; height:1.6rem; width:9rem; margin-right:4px; margin-left:2px;"></div>
+
+
+  <span class="font-weight-bold">in the teacher by how inquisitive and</span>
+  <div ondrop="drop(event)" ondragover="allowDrop(event)" id="third"class=" border border-dark mx-1" style="display:inline-block; height:1.6rem; width:9rem; margin-right:4px; margin-left:2px;"></div>
+
+  <span class="font-weight-bold">he was to the students.</span>
+
+
+  <div class="card-body text-secondary" id="fillstodrag" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+    <div style="margin-right:2px; float:left; height:1.6rem; width:9rem; text-align:center;" draggable="true" id="1" class="border border-primary font-weight-bold" ondragstart="drag(event)">good</div>
+
+    <div style="margin-right:2px; float:left; height:1.6rem; width:9rem; text-align:center;" draggable="true" id="2" class="border border-primary font-weight-bold" ondragstart="drag(event)">talkative</div>
+
+    <div style="margin-right:2px; float:left; height:1.6rem; width:9rem; text-align:center;" draggable="true" id="3" class="border border-primary font-weight-bold" ondragstart="drag(event)">professional</div>
+
+    <div style="margin-right:2px; float:left; height:1.6rem; width:9rem; text-align:center;" draggable="true" id="4" class="border border-primary font-weight-bold" ondragstart="drag(event)">quiet</div>
+
+    <div style="margin-right:2px; float:left; height:1.6rem; width:9rem; text-align:center;" draggable="true" id="5" class="border border-primary font-weight-bold" ondragstart="drag(event)">skill</div>
+    
+  </div>
+
+</div>
+
+<br><br><br>
+<button onclick="check()">Провери</button>
+
+</body>
+</html>	

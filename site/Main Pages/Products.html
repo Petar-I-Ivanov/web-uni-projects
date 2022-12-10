@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Продукти</title>
+  <link rel="stylesheet" href="..\style.css">
+
+  <style>
+    div.product {
+      float: left;
+      border-style: dashed;
+    }
+
+    .products-container {
+      margin: auto;
+      width: 85%;
+      padding: 10px;
+    }
+
+    p {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .top-right {
+      position: absolute;
+      line-height: 50px;
+      background-color: red;
+      color: white;
+    }
+
+    .top-right:hover {
+      transform: rotate(20deg);
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+
+    <div align="center">
+      <svg height="130" width="185">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgb(255,60,0);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(0,0,0);stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+        <text fill="#ffffff" font-size="45" font-family="Brush Script MT" x="30" y="85">HAPPY</text>
+      </svg>
+    </div>
+
+    <div class="navbar">
+
+      <a href="Home.html">Начало</a>
+
+      <div class="subnav">
+        <button class="subnavbtn">За Фирмата <i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+          <a href="..\Articles\Partners.html">Партньори</a>
+          <a href="..\Articles\Development.html">Развитие</a>
+        </div>
+      </div>
+
+      <div class="subnav">
+        <button class="subnavbtn">За Собственика <i class="fa fa-caret-down"></i></button>
+        <div class="subnav-content">
+          <a href="..\Articles\Favourite movie.html">Филм</a>
+          <a href="..\Articles\Favourite song.html">Музика</a>
+        </div>
+      </div>
+
+      <a href="Products.html">Продукти</a>
+      <a href="Purchase.html">Поръчки</a>
+      <a href="#">Мнения</a>
+      <a href="Hiring waiter.html">Работа</a>
+
+    </div>
+
+  </header>
+
+  <div style="position:fixed; top:250px; right:10px; background-color:Lightgrey;">
+    <a href="..\Main Pages\Purchase.html" style="text-decoration:none">
+      <img src="..\src\happy-car.png" />
+      <p align="center">Поръчайте<br> за вкъщи</p>
+    </a>
+  </div>
+
+  <div class="products-container" align="center">
+
+    <div class="product" style="transform: rotate(-30deg); border:none;">
+      <img src="..\src\products\бурата-с-авокадо.png" />
+      <p>бурата с авокадо</p>
+    </div>
+
+    <div class="product">
+      <img src="..\src\products\грозде-и-сирена.png" style="transform: skew(-10deg,-20deg);" />
+      <p>грозде и сирена</p>
+    </div>
+
+    <div class="product">
+      <img src="..\src\products\гръцка-салата.png" style="transform: matrix(0.866,0.5,-0.5,0.866,0,0);" />
+      <p>гръцка салата</p>
+    </div>
+
+    <div class="product">
+      <img src="..\src\products\златна-есен.png" style="transform: rotateX(30deg);" />
+      <p>златна есен</p>
+    </div>
+
+    <div class="product">
+      <img src="..\src\products\кето-салата-с-печено-пиле.png" style="visibility: hidden;" />
+      <p>кето салата с печено пиле</p>
+    </div>
+
+    <div class="product">
+      <img src="..\src\products\салата-корсика.png" style="opacity: 0.5" />
+      <p>салата корсика</p>
+    </div>
+
+    <div class="product">
+      <div class="top-right">ПРОМОЦИЯ</div>
+      <img src="..\src\products\салата-разкош.png" />
+      <p>салата разкош</p>
+    </div>
+
+    <div class="product">
+      <img src="..\src\products\салата-риголето.png" />
+      <p>салата риголето</p>
+    </div>
+
+    <div class="product">
+      <img src="..\src\products\салата-с-киноа-и-бяла-риба.png" />
+      <p>салата с киноа и бяла риба</p>
+    </div>
+
+    <div class="product">
+      <img src="..\src\products\спанак-с-киноа.png" />
+      <p>спанак с киноа</p>
+    </div>
+
+    <div class="product">
+      <img src="..\src\products\уолдорф-с-хрупкаво-пиле.png" />
+      <p>уолдорф с хрупкаво пиле</p>
+    </div>
+
+    <div class="product">
+      <img src="..\src\products\фитнес.png" />
+      <p>фитнес</p>
+    </div>
+
+    <div class="product">
+      <img src="..\src\products\цезар-с-хрупкави-калмари.png" />
+      <p>цезар с хрупкави калмари</p>
+    </div>
+
+    <div class="product">
+      <img src="..\src\products\цезар-с-хрупкаво-пиле.png" />
+      <p>цезар с хрупкаво пиле</p>
+    </div>
+
+
+  </div>
+
+</body>
+
+</html>

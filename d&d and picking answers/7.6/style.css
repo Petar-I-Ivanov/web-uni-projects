@@ -1,0 +1,13 @@
+#question {text-align: center;}
+div {text-align: center;}
+
+img {
+	padding: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+}
+img:hover {
+	border: 5px solid black;
+}
+
+#result {text-align: center;}

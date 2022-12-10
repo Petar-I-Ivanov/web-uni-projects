@@ -1,0 +1,60 @@
+span {
+	line-height: 40px;
+}
+
+.text-secondary {
+  color: #6c757d !important;
+}
+
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+user agent stylesheet div {
+  display: block;
+}
+
+.card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: .25rem;
+}
+
+.ml-1,
+.mx-1 {
+  margin-left: .25rem !important;
+}
+
+.mr-1,
+.mx-1 {
+  margin-right: .25rem !important;
+}
+
+.border-dark {
+  border-color: #343a40 !important;
+}
+
+.border {
+  border: 1px solid #dee2e6 !important;
+}
+
+#fillstodrag div {
+  margin: 30px !important;
+  background: white;
+}

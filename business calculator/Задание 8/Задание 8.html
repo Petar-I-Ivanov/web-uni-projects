@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Бизнес калколатор</title>
+        
+        <style>
+            .month, .inc, .out {display: none;}
+            .b {width: 100%; height: 30px;}
+            input {width: 50px;}
+            table {background-color: white;}
+            body {background-image: url("city.jpg");}
+
+            .smallCont {
+                float: left;
+                margin: 5px;
+                width: 31%;
+            }
+
+            #calc {
+                margin: auto;
+                width: 920px;
+                height: 162px;
+                text-align: center;
+                background-color: lightblue;
+                margin-top: 200px;
+            }
+        </style>
+
+        <script>
+
+            var counter = 1;
+            function visible() {
+
+                if (parseInt(counter) == 11) {
+                    displayed.innerHTML = 'Няма повече месеци.';
+                    return;
+                }
+
+                var x = document.getElementsByClassName('month');
+                var y = document.getElementsByClassName('inc');
+                var z = document.getElementsByClassName('out');
+
+                x[counter].style.display = 'table-cell';
+                y[counter].style.display = 'table-cell';
+                z[counter].style.display = 'table-cell';
+                counter++;
+            }
+
+            var sumInc;
+            var sumOut;
+            var taxNum;
+            function taxCalc() {
+
+                sumInc = 0;
+                sumOut = 0;
+                taxNum = 0;
+
+                var inc = document.getElementsByClassName('income');
+                var out = document.getElementsByClassName('outcome');
+
+                for (var i = 0; i < inc.length; i++) {
+                    if (isNaN(inc[i].value) || inc[i].value < 0) alert('Въвеждайте само положителни числа или 0.');
+                    else sumInc += parseFloat(inc[i].value);
+                }
+                
+                for (var i = 0; i < out.length; i++) {
+                    if (isNaN(out[i].value || inc[i].value < 0)) alert('Въвеждайте само положителни числа или 0.');
+                    else sumOut += parseFloat(out[i].value);
+                }
+
+                taxNum = 0.2 * (parseFloat(sumInc) - parseFloat(sumOut));
+                tax.innerHTML = 'Данъка на фирмата е ' + taxNum.toFixed(2) + ' лв.';
+            }
+
+            function profitCalc() {
+                taxCalc();
+                var profitNum = parseFloat(sumInc) - parseFloat(sumOut) - parseFloat(taxNum);
+                profit.innerHTML = 'Печалбата на фирмата е ' + profitNum.toFixed(2) + ' лв.';
+            }
+
+            function fade(e) {
+                if ((parseInt(e.pageX) > 307 && parseInt(e.pageX) < 1228)
+                && (parseInt(e.pageY) > 200 && parseInt(e.pageY) < 362))
+                calc.style.display = 'block';
+                else calc.style.display = 'none';
+            }
+
+            function down(num) {
+                var x = document.getElementsByClassName('b');
+                x[num].style.border = '5px solid red';
+            }
+
+            function up(num) {
+                var x = document.getElementsByClassName('b');
+                x[num].style.border = '1px solid black';
+            }
+
+            document.onmousemove = fade;
+
+        </script>
+    </head>
+
+    <body>
+        <div id="calc">
+        <table border="2px solid black" align="center">
+            <tr>
+                <th></th>
+                <th>Януари</th>
+                <th class="month">Февруари</th>
+                <th class="month">Март</th>
+                <th class="month">Април</th>
+                <th class="month">Май</th>
+                <th class="month">Юни</th>
+                <th class="month">Юли</th>
+                <th class="month">Август</th>
+                <th class="month">Септември</th>
+                <th class="month">Октромври</th>
+                <th class="month">Ноември</th>
+                <th class="month" id="dec">Декември</th>
+            </tr>
+            <tr>
+                <td>Приходи</td>
+                <td><input type="number" value="0" class="income"></td>
+                <td class="inc"><input type="number" value="0" class="income"></td>
+                <td class="inc"><input type="number" value="0" class="income"></td>
+                <td class="inc"><input type="number" value="0" class="income"></td>
+                <td class="inc"><input type="number" value="0" class="income"></td>
+                <td class="inc"><input type="number" value="0" class="income"></td>
+                <td class="inc"><input type="number" value="0" class="income"></td>
+                <td class="inc"><input type="number" value="0" class="income"></td>
+                <td class="inc"><input type="number" value="0" class="income"></td>
+                <td class="inc"><input type="number" value="0" class="income"></td>
+                <td class="inc"><input type="number" value="0" class="income"></td>
+                <td class="inc"><input type="number" value="0" class="income"></td>
+            </tr>
+            <tr>
+                <td>Разходи</td>
+                <td><input type="number" value="0" class="outcome"></td>
+                <td class="out"><input type="number" value="0" class="outcome"></td>
+                <td class="out"><input type="number" value="0" class="outcome"></td>
+                <td class="out"><input type="number" value="0" class="outcome"></td>
+                <td class="out"><input type="number" value="0" class="outcome"></td>
+                <td class="out"><input type="number" value="0" class="outcome"></td>
+                <td class="out"><input type="number" value="0" class="outcome"></td>
+                <td class="out"><input type="number" value="0" class="outcome"></td>
+                <td class="out"><input type="number" value="0" class="outcome"></td>
+                <td class="out"><input type="number" value="0" class="outcome"></td>
+                <td class="out"><input type="number" value="0" class="outcome"></td>
+                <td class="out"><input type="number" value="0" class="outcome"></td>
+            </tr>
+        </table>
+
+        <div class="smallCont">
+        <button onclick="visible();" onmousedown="down(0);" onmouseup="up(0);" class="b">Кликни за още 1 месец</button>
+        <p id="displayed"></p>
+        </div>
+
+        <div class="smallCont">
+        <button onclick="taxCalc();" onmousedown="down(1);" onmouseup="up(1);" class="b">Кликни за изчисление на данъка</button>
+        <p id="tax"></p>
+        </div>
+
+        <div class="smallCont">
+        <button onclick="profitCalc();" onmousedown="down(2);" onmouseup="up(2);" class="b">Кликни за изчисление на печалбата</button>
+        <p id="profit"></p>
+        </div>
+
+    </div>
+    </body>
+</html>

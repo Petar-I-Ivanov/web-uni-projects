@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Image guess</title>
+	<link rel="stylesheet" href="style.css"/>
+    <script src="script.js"></script>
+  </head>
+  
+  <body>
+	<h1 id="question"></h1>
+	<div>
+		<img id="field1" src="images/field-1.jpg" onclick="fieldClick(this);"/>
+		<img id="field2" src="images/field-2.jpg" onclick="fieldClick(this);"/>
+		<img id="city1" src="images/city-1.jfif" onclick="cityClick(this);"/><br>
+		<img id="city2" src="images/city-2.jfif" onclick="cityClick(this);"/>
+		<img id="beach1" src="images/beach-1.jpg" onclick="beachClick(this);"/>
+		<img id="beach2" src="images/beach-2.jpg" onclick="beachClick(this);"/>
+	</div>
+	<p id="result"></p>
+  </body>
+</html>

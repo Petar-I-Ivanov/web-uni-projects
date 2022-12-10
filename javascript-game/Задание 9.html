@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Игра</title>
+  <style>
+    #leftDIV,
+    #rightDIV {
+      float: left;
+      text-align: center;
+      width: 48%;
+      height: 450px;
+    }
+
+    .container {
+      position: relative;
+      border: 1px solid black;
+      background: #aaaaaa;
+      width: 402px;
+      height: 402px;
+      margin: auto;
+    }
+
+    .elem {
+      position: absolute;
+      border: 1px solid white;
+      background: #555555;
+      width: 98px;
+      height: 98px;
+      font-size: 85px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    #retryB {
+      display: none;
+      margin: auto;
+    }
+  </style>
+
+  <script>
+
+    function moveEl(myObj, isDisorder) {
+      if (myObj.style.top == y + "px")
+        if (myObj.style.left == (x + 100) + "px") { myObj.style.left = x + "px"; x = x + 100; }
+        else {
+          if (myObj.style.left == (x - 100) + "px") { myObj.style.left = x + "px"; x = x - 100; }
+        }
+      else
+        if (myObj.style.left == x + "px")
+          if (myObj.style.top == (y + 100) + "px") { myObj.style.top = y + "px"; y = y + 100; }
+          else
+            if (myObj.style.top == (y - 100) + "px") { myObj.style.top = y + "px"; y = y - 100; }
+
+      if (!isDisorder) checkWin();
+    }
+
+    function disorder() {
+      nom = Math.floor(Math.random() * 15);
+      moveEl(document.getElementsByClassName("elem")[nom], true);
+      pnt = setTimeout("disorder()", 1);
+    }
+
+    function checkWin() {
+      var isEverythingPlaced = true;
+      var divs = document.getElementsByClassName('elem');
+
+      for (var i = 0; i < divs.length; i++) {
+        if (parseInt(divs[i].innerHTML) == i + 1 &&
+          (parseInt(divs[i].style.top) != (1 + ((i - i % 4) / 4) * 100) ||
+            parseInt(divs[i].style.left) != (1 + (i % 4) * 100))) { isEverythingPlaced = false; }
+      }
+
+      if (isEverythingPlaced) {
+        clearInterval(timer);
+        result.innerHTML = 'SOLVED!';
+        retryB.style.display = 'block';
+
+        newTiming = sec;
+        if (lastTiming != null) {
+          if (lastTiming < newTiming) {
+            comprare.innerHTML = 'Справихте се по-бавно от предния път (' + lastTiming + 'с).';
+          }
+          else if (lastTiming > newTiming) {
+            comprare.innerHTML = 'Справихте се по-бързо от предния път (' + lastTiming + 'с).';
+          }
+          else {
+            comprare.innerHTML = 'Справихте се еднакво с предния път (' + lastTiming + 'с).';
+          }
+        }
+      }
+    }
+
+    var timer, sec;
+    function pad(val) { return val > 9 ? val : "0" + val; }
+    function stopB() {
+      clearTimeout(pnt);
+      clearInterval(timer);
+
+      sec = 0;
+      timer = setInterval(function () {
+        document.getElementById("seconds").innerHTML = pad(++sec % 60);
+        document.getElementById("minutes").innerHTML = pad(parseInt(sec / 60, 10));
+      }, 1000);
+    }
+
+    var lastTiming = null;
+    var newTiming = null;
+
+    function retry() {
+
+      disorder();
+      setTimeout(stopB, 5000);
+      retryB.style.display = 'none';
+      result.innerHTML = '';
+      comprare.innerHTML = '';
+
+      lastTiming = newTiming;
+      newTiming = null;
+    }
+
+    window.onload = function () {
+      disorder();
+      setTimeout(stopB, 5000);
+    }
+  </script>
+</head>
+
+<body>
+  <div id="leftDIV">
+    <div class="container">
+      <script>
+        for (i = 0; i < 15; i++) {
+          document.write("<div class='elem' onClick='moveEl(this, false)' title='Click me'>", i + 1, "</div>");
+          with (document.getElementsByClassName('elem')[i].style) {
+            top = (1 + ((i - i % 4) / 4) * 100) + 'px';
+            left = (1 + (i % 4) * 100) + 'px';
+          }
+        }
+        x = (1 + (15 % 4) * 100);
+        y = (1 + ((15 - i % 4) / 4) * 100);
+      </script>
+    </div><br>
+  </div>
+  <div id="rightDIV">
+    <h1>Timer: <span id="minutes">00</span>:<span id="seconds">00</span></h1>
+    <h1 id="result"></h1>
+    <p id="comprare"></p>
+    <input type="button" value="Рестарт" onclick="retry()" id="retryB">
+    <p>Правила:<br>При зареждане на страницата числата се разбъркват за 5 секунди и таймера започва да брои.
+      Когато се наредят правилно за първи път излиза съобщение и 'Рестарт бутон, след всеки следващ
+      път излиза и статистика (сръвнява сегашното време, за което е решено с последното).</p>
+  </div>
+</body>
+
+</html>
